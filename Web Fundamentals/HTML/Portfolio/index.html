@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="description" content="Sanad Abu Shama a full-stack developer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <style>
+      table,
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      #submit {
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sanad Abu Shama</h1>
+    <img
+      src="imgs/image-placeholder.jpeg"
+      alt="My image"
+      style="margin-bottom: 6px"
+    />
+    <div>
+      <i class="fab fa-github"></i>
+      <a href="https://github.com/SanadAbuShama" style="margin-right: 10px"
+        >GitHub</a
+      >
+      <i class="fab fa-linkedin"></i>
+      <a
+        href="http://www.linkedin.com/in/sanad-abushama-10244884"
+        style="margin-right: 10px"
+        >LinkedIn</a
+      >
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:abushamasanad@hotmail.com" style="margin-right: 10px"
+        >Email</a
+      >
+    </div>
+    <h2>Technologies</h2>
+    <table>
+      <tr>
+        <th>Front-End</th>
+        <th>Python</th>
+        <th>JavaScript</th>
+        <th>Database</th>
+      </tr>
+      <tr>
+        <td>HTML5</td>
+        <td>Django</td>
+        <td>Express</td>
+        <td>MySQL</td>
+      </tr>
+      <tr>
+        <td>CSS3</td>
+        <td>Flask</td>
+        <td>Mongoose</td>
+        <td>MongoDB</td>
+      </tr>
+      <tr>
+        <td>Bootstrap</td>
+        <td>Unittest</td>
+        <td>React</td>
+        <td></td>
+      </tr>
+    </table>
+    <div id="projects">
+      <h2>YelpCamp</h2>
+      <p>
+        Campgrounds website with pictures and reviews.
+        <a href="https://github.com/SanadAbuShama/yelp-camp">GitHub</a>
+        <a href="https://fast-eyrie-47312.herokuapp.com/">YelpCamp</a>
+      </p>
+    </div>
+    <h2>Contact Me</h2>
+    <form>
+      <label for="name">Name: </label>
+      <input type="text" name="name" id="name" />
+      <label for="email">Email: </label>
+      <input type="email" name="email" id="email" />
+
+      <label for="message" style="display: block">Message: </label>
+      <textarea
+        name="message"
+        id="message"
+        cols="30"
+        rows="5"
+        style="display: block"
+      ></textarea>
+      <input type="submit" name="submit" id="submit" value="Send Message" />
+    </form>
+  </body>
+</html>

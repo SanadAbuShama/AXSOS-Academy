@@ -1,0 +1,30 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000b6;
+  height: 50px;
+  font-family: "Roboto", sans-serif;
+}
+.nav-title {
+  width: fit-content;
+  color: white;
+  margin-left: 10px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 400px;
+  list-style-type: none;
+}
+li a {
+  text-decoration: none;
+  color: #ffffff9c;
+}
+li button {
+  background-color: #61b1d1;
+  color: white;
+  padding: 3px 10px;
+  box-shadow: 3px 3px black;
+}

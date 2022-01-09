@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Profile Page</title>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="nav-links">
+        <h1 class="nav-title">Profile</h1>
+        <ul class="nav-items">
+          <li><a href="">Home</a></li>
+          <li id="myprofile"><a href="">My Profile</a></li>
+          <li><a href="">Find Connections</a></li>
+        </ul>
+      </div>
+      <div class="button">
+        <button class="signout">Sign Out</button>
+      </div>
+    </div>
+    <div class="main">
+      <div class="info">
+        <div class="card">
+          <div class="colored">
+            <img src="imgs\jane-m.jpg" alt="Jane Image" class="profile-image" />
+          </div>
+          <div class="details">
+            <ul class="personaldetails">
+              <li class="name"><h1>Jane Doe</h1></li>
+              <li class="location">
+                <img
+                  src="icons/map-marker.png"
+                  alt="Map marker"
+                  class="marker"
+                />
+                Ramallah
+              </li>
+              <li class="profession">
+                <p>
+                  Developer | Engineer | Problem Solver<br />
+                  Master of shadows and the Internet!
+                </p>
+              </li>
+
+              <li class="settings">
+                <img src="icons/gear.png" alt="Gear" class="gear" />
+                <a href="">Edit Profile</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="education">
+          <div class="color-black"><h2>Education</h2></div>
+          <ul class="education-details">
+            <li>
+              <h2>Coding Dojo - FullStack Bootcamp</h2>
+              <br />
+              <h3>Dec 2019 - Mar 2020</h3>
+            </li>
+            <li>
+              <h2>Coding Dojo - FullStack Bootcamp</h2>
+              <br />
+              <h3>Dec 2019 - Mar 2020</h3>
+            </li>
+            <li>
+              <h2>Coding Dojo - FullStack Bootcamp</h2>
+              <br />
+              <h3>Dec 2019 - Mar 2020</h3>
+              <h3>Triple black belt in Python, Java, and MERN</h3>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="conn-req">
+          <div class="colored">img</div>
+        </div>
+        <div class="connections"></div>
+      </div>
+    </div>
+  </body>
+</html>

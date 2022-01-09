@@ -1,0 +1,254 @@
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wall {
+        background-color: blue;
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+      }
+      .sushi {
+        background-color: black;
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+        background-image: url("sushi.png");
+        background-size: contain;
+      }
+      .onigiri {
+        background-color: black;
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+        background-image: url("onigiri.png");
+        background-size: contain;
+      }
+      .blank {
+        background-color: black;
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+      }
+      .ghost {
+        background-color: black;
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+        background-image: url("pinky.gif");
+        background-size: contain;
+        position: absolute;
+      }
+      .row {
+        line-height: 0;
+      }
+      #ninjaman {
+        background-color: black;
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+        background-image: url("ninja.gif");
+        background-size: contain;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="world"></div>
+    <div id="ninjaman"></div>
+    <div id="ghosts"></div>
+    <span>Sushi: 10 Points</span>
+    <br />
+    <span>Onigiri: 5 Points</span>
+    <div>Score: <span id="score"></span></div>
+    <div>Lifes: <span id="lifes"></span></div>
+    <div><span id="gameover"></span></div>
+  </body>
+  <script type="text/javascript">
+    var numRows = Math.floor(Math.random() * 6) + 5,
+      numColumns = Math.floor(Math.random() * 6) + 5;
+
+    var world = new Array(numRows).fill([]);
+    var array = [];
+
+    function createWorld() {
+      for (var idx = 0; idx < world.length; idx++) {
+        if (idx == 0 || idx == world.length - 1) {
+          array = [];
+          for (var j = 1; j <= numColumns; j++) {
+            array.push(0);
+          }
+          world[idx] = [...array];
+        } else {
+          array = [];
+          for (var j = 2; j < numColumns; j++) {
+            array.push(Math.floor(Math.random() * 4));
+          }
+          world[idx] = [0, ...array, 0];
+        }
+      }
+    }
+    createWorld();
+
+    var worldDict = {
+      0: "wall",
+      1: "blank",
+      2: "sushi",
+      3: "onigiri",
+      4: "ghost",
+    };
+
+    function drawWorld() {
+      var output = "";
+      for (var row = 0; row < world.length; row++) {
+        output += "<div class='row'>";
+        for (var x = 0; x < world[row].length; x++) {
+          //console.log("value: ", worldDict[world[row][x]]);
+          output += "<div class='" + worldDict[world[row][x]] + "'></div>";
+        }
+        output += "</div>";
+      }
+      document.getElementById("world").innerHTML = output;
+    }
+    drawWorld();
+
+    var ninjaman = {
+      x: 1,
+      y: 1,
+    };
+    function drawNinjaMan() {
+      document.getElementById("ninjaman").style.top = ninjaman.y * 40 + "px";
+      document.getElementById("ninjaman").style.left = ninjaman.x * 40 + "px";
+    }
+    drawNinjaMan();
+
+    var ghosts = [
+      {
+        x: numColumns - 2,
+        y: numRows - 2,
+      },
+      {
+        x: numColumns - 2,
+        y: 1,
+      },
+    ];
+    function drawGhosts() {
+      content = "";
+      for (var x = 0; x < ghosts.length; x++) {
+        content +=
+          "<div class='ghost' style='left:" +
+          ghosts[x].x * 40 +
+          "px; top:" +
+          ghosts[x].y * 40 +
+          "px'></div>";
+      }
+      document.getElementById("ghosts").innerHTML = content;
+    }
+    drawGhosts();
+    var direction = "left";
+    var directionArray = ["left", "right", "up", "down"];
+    var lifes = 3;
+    function moveGhosts() {
+      direction =
+        directionArray[Math.floor(Math.random() * directionArray.length)];
+      for (var idx = 0; idx < ghosts.length; idx++) {
+        if (
+          direction == "left" &&
+          world[ghosts[idx].y][ghosts[idx].x - 1] != 0
+        ) {
+          ghosts[idx].x -= 1;
+        }
+        if (
+          direction == "right" &&
+          world[ghosts[idx].y][ghosts[idx].x + 1] != 0
+        ) {
+          ghosts[idx].x += 1;
+        }
+        if (direction == "up" && world[ghosts[idx].y - 1][ghosts[idx].x] != 0) {
+          ghosts[idx].y -= 1;
+        }
+        if (
+          direction == "down" &&
+          world[ghosts[idx].y + 1][ghosts[idx].x] != 0
+        ) {
+          ghosts[idx].y += 1;
+        }
+      }
+      if (
+        ((ghosts[0].x == ninjaman.x && ghosts[0].y == ninjaman.y) ||
+          (ghosts[1].x == ninjaman.x && ghosts[1].y == ninjaman.y)) &&
+        lifes != 0
+      ) {
+        lifes--;
+      }
+      if (lifes == 0) {
+        document.getElementById("gameover").innerHTML = "Game Over !";
+      }
+      drawGhosts();
+      setTimeout(moveGhosts, 500);
+    }
+    moveGhosts();
+
+    var score = 0;
+    document.onkeydown = function (e) {
+      if (e.keyCode == 37) {
+        if (world[ninjaman.y][ninjaman.x - 1] == 2) {
+          score += 10;
+        }
+        if (world[ninjaman.y][ninjaman.x - 1] == 3) {
+          score += 5;
+        }
+        if (world[ninjaman.y][ninjaman.x - 1] != 0) {
+          ninjaman.x--;
+        }
+      }
+      if (e.keyCode == 39) {
+        if (world[ninjaman.y][ninjaman.x + 1] == 2) {
+          score += 10;
+        }
+        if (world[ninjaman.y][ninjaman.x + 1] == 3) {
+          score += 5;
+        }
+        if (world[ninjaman.y][ninjaman.x + 1] != 0) {
+          ninjaman.x++;
+        }
+      }
+      if (e.keyCode == 38) {
+        if (world[ninjaman.y - 1][ninjaman.x] == 2) {
+          score += 10;
+        }
+        if (world[ninjaman.y - 1][ninjaman.x] == 3) {
+          score += 5;
+        }
+        if (world[ninjaman.y - 1][ninjaman.x] != 0) {
+          ninjaman.y--;
+        }
+      }
+      if (e.keyCode == 40) {
+        if (world[ninjaman.y + 1][ninjaman.x] == 2) {
+          score += 10;
+        }
+        if (world[ninjaman.y + 1][ninjaman.x] == 3) {
+          score += 5;
+        }
+        if (world[ninjaman.y + 1][ninjaman.x] != 0) {
+          ninjaman.y++;
+        }
+      }
+      world[ninjaman.y][ninjaman.x] = 1;
+
+      updateScoreAndLifes(score, lifes);
+      drawNinjaMan();
+      drawWorld();
+    };
+    function updateScoreAndLifes(score, lifes) {
+      document.getElementById("score").innerHTML = score;
+      document.getElementById("lifes").innerHTML = lifes;
+    }
+    updateScoreAndLifes(score, lifes);
+  </script>
+</html>

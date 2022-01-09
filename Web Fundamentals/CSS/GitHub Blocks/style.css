@@ -1,0 +1,34 @@
+.container {
+  width: 700px;
+  height: 600px;
+  background-color: #749fa565;
+  margin: 0 auto;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+}
+.row {
+  height: 150px;
+  width: 600px;
+  margin: 0 0 20px 50px;
+  display: flex;
+  align-items: center;
+}
+
+.row1 {
+  background-color: #b172a7;
+  justify-content: space-around;
+}
+.row2 {
+  background-color: #599e68;
+  justify-content: space-evenly;
+}
+.row3 {
+  background-color: firebrick;
+  justify-content: space-evenly;
+}
+
+img {
+  height: 120px;
+}
