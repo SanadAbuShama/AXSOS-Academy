@@ -81,6 +81,8 @@ nav-title {
 }
 .card .colored {
   background-color: #17a2b8;
+  display: flex;
+  justify-content: left;
   flex: 1;
 }
 .card .details {
@@ -93,10 +95,10 @@ nav-title {
   margin-left: 20px;
 }
 .card .profile-image {
-  position: absolute;
   width: 80px;
-  top: 145px;
-  left: 325px;
+  margin-bottom: -35px;
+  margin-top: 10px;
+  margin-left: 20px;
   border: grey 1px solid;
   border-radius: 50%;
 }
