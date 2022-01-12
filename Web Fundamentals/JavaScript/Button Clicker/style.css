@@ -1,0 +1,108 @@
+* {
+  font-family: "Patrick Hand", cursive;
+  font-weight: bolder;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles
+ ********************
+ ********************
+ ********************
+ ********************
+ ********************
+*/
+
+header {
+  align-items: center;
+  background-color: #cccccc;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 5px 0;
+  width: 600px;
+}
+header button,
+input {
+  padding: 3px 10px;
+}
+header button {
+  background-color: #2b78e4;
+  box-shadow: 2px 2px 2px black;
+  color: #b1cdf4;
+  width: 50px;
+}
+
+/* Main Styles 
+**************
+**************
+**************
+**************
+**************
+*/
+
+main {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px auto;
+  width: 600px;
+}
+
+main .content {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+main section {
+  align-items: center;
+  border: 3px solid black;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  width: 100%;
+}
+
+main section:nth-of-type(2) {
+  margin-top: 20px;
+}
+
+main section * {
+  margin: 10px;
+}
+
+main section span {
+  display: block;
+  width: max-content;
+}
+
+main section button {
+  background-color: #ffd966;
+  padding: 5px 10px;
+}
+
+main section a {
+  color: #2c6ca2;
+  margin: 0;
+}
+
+main section p {
+  text-align: left;
+}
+
+main aside {
+  border: 3px solid black;
+  height: fit-content;
+  line-height: 20pt;
+  padding: 20px 10px;
+  text-align: left;
+  width: 32%;
+}
+
+main aside button {
+  background-color: #93c47d;
+  box-shadow: 2px 2px 2px black;
+  margin-top: 10px;
+  padding: 5px 10px;
+  width: 100%;
+}

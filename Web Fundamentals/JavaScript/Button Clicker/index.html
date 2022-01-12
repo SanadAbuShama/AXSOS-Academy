@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&family=Patrick+Hand&family=Roboto:ital,wght@0,300;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Button Clicker</title>
+  </head>
+  <body>
+    <header>
+      <h1>Dojonary</h1>
+      <input type="text" name="search" id="search" placeholder="Search..." />
+      <button type="button" onclick="changeText(this)">Login</button>
+    </header>
+    <main>
+      <div class="content">
+        <section class="ninja">
+          <div>
+            <h2>ninja</h2>
+            <h3>noun</h3>
+            <span>Plural: ninjas</span>
+            <button onclick="showAlert()">13 Likes</button>
+          </div>
+          <p>
+            A practitioner skilled in the <a href="">Japanese</a> art of
+            <a href="">ninjutsu</a>.
+          </p>
+        </section>
+        <section class="ninja">
+          <div>
+            <h2>ninja</h2>
+            <h3>noun</h3>
+            <span>Plural: ninjas</span>
+            <button onclick="showAlert()">37 Likes</button>
+          </div>
+          <p>
+            A <a href="">programmer</a> who breaks down problems with
+            <a href="">zen</a>-like focus.
+          </p>
+        </section>
+      </div>
+      <aside>
+        <p>
+          Dojonary is <br />
+          defined by <b> YOU</b>
+        </p>
+        <button onclick="hideButton(this)">Add Definition</button>
+      </aside>
+    </main>
+    <script src="index.js" type="application/javascript"></script>
+  </body>
+</html>
