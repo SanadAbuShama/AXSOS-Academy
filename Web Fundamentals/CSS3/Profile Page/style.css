@@ -6,7 +6,7 @@
 
 /*   Navbar */
 
-.nav {
+nav {
   background-color: black;
   height: 50px;
   display: flex;
@@ -49,14 +49,14 @@ nav-title {
 #myprofile {
   font-weight: bold;
 }
-.nav a {
+nav a {
   color: inherit;
   text-decoration: none;
 }
 
 /* Main Section */
 
-.main {
+main {
   width: 60vw;
   min-height: 100vh;
   margin: 0 auto;
