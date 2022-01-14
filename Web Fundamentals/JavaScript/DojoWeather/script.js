@@ -2,7 +2,7 @@ var tempCels = [];
 for (var i = 0; i < 8; i++) {
   tempCels.push(parseInt(document.getElementById(`temp${i}`).innerText));
 }
-console.log(tempCels);
+
 function weatherReport() {
   alert("Loading weather report...");
 }
