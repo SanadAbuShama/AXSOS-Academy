@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>DojoWeather</title>
+  </head>
+  <body>
+    <header>
+      <h1>DojoWeather</h1>
+      <ul>
+        <li onclick="weatherReport()" onmouseover="changeCursor(this)">
+          Burbank
+        </li>
+        <li onclick="weatherReport()" onmouseover="changeCursor(this)">
+          Chicago
+        </li>
+        <li onclick="weatherReport()" onmouseover="changeCursor(this)">
+          Dallas
+        </li>
+      </ul>
+    </header>
+    <section>
+      <h2>San Jose</h2>
+      <div>
+        <label for="temp">show temperature in: </label>
+        <select name="temp" id="temp" onchange="changeTemp(this)">
+          <option value="cel">&#x2103;</option>
+          <option value="fah">&#x2109;</option>
+        </select>
+      </div>
+    </section>
+    <section>
+      <div>
+        <h3>Today</h3>
+        <img src="imgs/some_rain.png" alt="rain" />
+        <span>some rain</span>
+        <footer><span id="temp0">24°</span><span id="temp1">18°</span></footer>
+      </div>
+      <div>
+        <h3>Tomorrow</h3>
+        <img src="imgs/some_sun.png" alt="sun" />
+        <span>some sun</span>
+        <footer><span id="temp2">27°</span><span id="temp3">19°</span></footer>
+      </div>
+      <div>
+        <h3>Friday</h3>
+        <img src="imgs/some_clouds.png" alt="clouds" />
+        <span>some clouds</span>
+        <footer><span id="temp4">21°</span><span id="temp5">16°</span></footer>
+      </div>
+      <div>
+        <h3>Saturday</h3>
+        <img src="imgs/some_sun.png" alt="sun" />
+        <span>some rain</span>
+        <footer><span id="temp6">26°</span><span id="temp7">21°</span></footer>
+      </div>
+    </section>
+    <div class="message">
+      <img src="imgs/cookie.png" alt="cookie" />
+      <p>
+        <b>Stop! Cookie time</b><br />We use cookies (sadly not the edible ones)
+        to personalize content and ads, to provide social media features and to
+        analyze out traffic. <a href="">Read more...</a>
+      </p>
+      <button onclick="removeMessage(this)">I Accept</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
