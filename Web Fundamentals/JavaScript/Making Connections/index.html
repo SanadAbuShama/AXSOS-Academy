@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Profile Page</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-links">
+        <h1 class="nav-title">Profile</h1>
+        <ul class="nav-items">
+          <li><a href="">Home</a></li>
+          <li id="myprofile"><a href="">My Profile</a></li>
+          <li><a href="">Find Connections</a></li>
+        </ul>
+      </div>
+      <div class="button">
+        <button class="signout">Sign Out</button>
+      </div>
+    </nav>
+    <main>
+      <div class="info">
+        <div class="card">
+          <div class="colored">
+            <img src="imgs/jane-m.jpg" alt="Jane Image" class="profile-image" />
+          </div>
+          <div class="details">
+            <ul class="personaldetails">
+              <li class="name"><h2>Jane Doe</h2></li>
+              <li class="location">
+                <img
+                  src="icons/map-marker.png"
+                  alt="Map marker"
+                  class="marker"
+                />
+                Seattle
+              </li>
+              <li class="profession">
+                <p>
+                  Developer | Engineer | Problem Solver<br />
+                  Master of shadows and the Internet!
+                </p>
+              </li>
+
+              <li class="settings">
+                <img src="icons/gear.png" alt="Gear" class="gear" />
+                <a onclick="changeName()" href="#">Edit Profile</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="education">
+          <div class="color-black"><h2>Education</h2></div>
+          <ul class="education-details">
+            <li>
+              <h2>Coding Dojo - FullStack Bootcamp</h2>
+
+              <h3>Dec 2019 - Mar 2020</h3>
+            </li>
+            <li>
+              <h2>Coding Dojo - FullStack Bootcamp</h2>
+
+              <h3>Dec 2019 - Mar 2020</h3>
+            </li>
+            <li>
+              <h2>Coding Dojo - FullStack Bootcamp</h2>
+
+              <h3>Dec 2019 - Mar 2020</h3>
+              <h3>Triple black belt in Python, Java, and MERN</h3>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="conn-req">
+          <div class="colored">
+            <span class="number">2</span><span>Connection Requests</span>
+          </div>
+          <ul class="requests">
+            <li class="request">
+              <img src="imgs/todd-s.jpg" alt="Todd" class="image" /><span
+                >Todd E</span
+              ><span class="accept-decline"
+                ><img
+                  onclick="removeRequest(this)"
+                  src="icons/accept-circle.png"
+                  alt="accept" /><img
+                  onclick="removeRequest(this)"
+                  src="icons/close-circle.png"
+                  alt="decline"
+              /></span>
+            </li>
+            <li class="request">
+              <img src="imgs/phil-s.jpg" alt="Phil" class="image" /><span
+                >Phil K</span
+              ><span class="accept-decline"
+                ><img
+                  onclick="removeRequest(this)"
+                  src="icons/accept-circle.png"
+                  alt="accept" /><img
+                  onclick="removeRequest(this)"
+                  src="icons/close-circle.png"
+                  alt="decline"
+              /></span>
+            </li>
+          </ul>
+        </div>
+        <div class="connections">
+          <div class="colored">
+            <span class="number">500</span><span>Your Connections</span>
+          </div>
+          <ul class="requests">
+            <li class="request">
+              <img src="imgs/anne-s.jpg" alt="Anne" class="image" /><span
+                >Anne J</span
+              >
+            </li>
+            <li class="request">
+              <img src="imgs/alayne-s.jpg" alt="Alayne" class="image" /><span
+                >Alayne T</span
+              >
+            </li>
+            <li class="request">
+              <img src="imgs/arry-s.jpg" alt="Arry" class="image" /><span
+                >Arry Y</span
+              >
+            </li>
+            <li class="request">
+              <img src="imgs/phil-s.jpg" alt="Phil" class="image" /><span
+                >Phil K</span
+              >
+            </li>
+          </ul>
+          <div class="viewall"><a href="">View More</a></div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

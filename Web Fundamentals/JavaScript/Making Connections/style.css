@@ -1,0 +1,207 @@
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  align-items: center;
+  background-color: black;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  height: 50px;
+  margin-bottom: 50px;
+}
+nav-title {
+  flex: 1;
+}
+.nav-links {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex: 2;
+  height: 70%;
+  padding: 0 100px;
+}
+.nav-items {
+  display: flex;
+  flex: 4;
+  justify-content: space-evenly;
+  list-style-type: none;
+  padding: 0 20px;
+}
+.button {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.signout {
+  background-color: #3db3e9;
+  border: none;
+  color: #e4fafa;
+  color: white;
+  padding: 3px 10px;
+}
+#myprofile {
+  font-weight: bold;
+}
+nav a {
+  color: inherit;
+  text-decoration: none;
+}
+main {
+  display: flex;
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 60vw;
+}
+.info {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  height: 800px;
+  margin: 10px;
+}
+.card {
+  border: 3px #cad1d1 solid;
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  margin: 20px;
+}
+.card .colored {
+  background-color: #17a2b8;
+  display: flex;
+  flex: 1;
+  justify-content: left;
+}
+.card .details {
+  flex: 3;
+}
+.card .details .personaldetails {
+  list-style-type: none;
+  margin-left: 20px;
+  margin-top: 40px;
+}
+.card .profile-image {
+  border: #ebe4e4 3px solid;
+  border-radius: 50%;
+  margin-bottom: -35px;
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 80px;
+}
+.card .details .personaldetails li {
+  margin: 20px 0;
+}
+.marker,
+.gear {
+  height: 15px;
+  vertical-align: top;
+}
+.settings button {
+  background: none;
+  border: none;
+  color: #17a2b8;
+  font-size: 12pt;
+  text-decoration: underline;
+}
+.education {
+  border: 3px #cad1d1 solid;
+  flex: 3;
+  margin: 20px;
+}
+.color-black {
+  align-items: center;
+  background-color: #333333;
+  color: white;
+  display: flex;
+  height: 40px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+.education-details {
+  list-style-type: none;
+  margin-left: 20px;
+}
+.education-details h3 {
+  color: grey;
+  margin-top: 5px;
+}
+.education-details h2 {
+  margin-top: 5px;
+}
+.education-details li {
+  margin-top: 15px;
+}
+.sidebar {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 600px;
+  margin: 10px;
+}
+.conn-req {
+  border: 3px #cad1d1 solid;
+  flex: 2;
+  margin: 20px 10px 10px 10px;
+}
+.conn-req .image {
+  border-radius: 50%;
+  width: 40px;
+}
+.requests .request {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+.accept-decline {
+  display: flex;
+}
+.accept-decline img {
+  margin: 4px;
+  width: 25px;
+}
+.connections {
+  border: 3px #cad1d1 solid;
+  flex: 3;
+  margin: 10px;
+}
+.connections .image {
+  border-radius: 50%;
+  width: 40px;
+}
+.connections .viewall {
+  border-top: 3px #cad1d1 solid;
+  font-size: 15px;
+  height: 30px;
+  padding: 8px 0 0 5px;
+}
+.sidebar .colored {
+  align-items: center;
+  background-color: #333333;
+  color: white;
+  display: flex;
+  height: 40px;
+  justify-content: space-evenly;
+}
+.sidebar .colored .number {
+  background-color: grey;
+  border-radius: 50%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  width: 30px;
+}
+.sidebar .connections .colored .number {
+  border-radius: 50%;
+  width: 50px;
+}
+.connections .requests .request {
+  justify-content: left;
+  margin-left: 20px;
+}
+.connections .requests .request .image {
+  margin-right: 10px;
+}
