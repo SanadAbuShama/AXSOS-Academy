@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Likes - Part 2</title>
+  </head>
+  <body>
+    <header><h1>Network</h1></header>
+    <h2>Your Feed</h2>
+    <main>
+      <aside>
+        <img src="imgs/user-circle.png" alt="" /><a href="">Add an avatar</a>
+        <h3>James Doe</h3>
+      </aside>
+      <div class="users">
+        <section>
+          <div class="user">
+            <h3>Neil M</h3>
+            <span>9 Like(s)</span>
+            <button onclick="addLike(this)" id="first">Like</button>
+          </div>
+          <p>
+            I just set up a new discord bot, let me know what you all thin.
+            <a href="">link</a>
+          </p>
+        </section>
+        <section>
+          <div class="user">
+            <h3>Nicole K</h3>
+            <span>12 Like(s)</span>
+            <button onclick="addLike(this)" id="second">Like</button>
+          </div>
+          <p>Just finished my <a href="">next comic</a>, check it out.</p>
+        </section>
+        <section>
+          <div class="user">
+            <h3>Jim R</h3>
+            <span>9 Like(s)</span>
+            <button onclick="addLike(this)" id="third">Like</button>
+          </div>
+          <p>
+            I can't stop listening to the <a href="">new album</a>. Who else is
+            liking it?
+          </p>
+        </section>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
