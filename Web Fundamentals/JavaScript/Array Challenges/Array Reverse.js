@@ -1,5 +1,9 @@
 function reverse(arr) {
-  arr.reverse();
+  var tempArr = [];
+  for (var i = arr.length - 1; i >= 0; i--) {
+    tempArr.push(arr[i]);
+  }
+  arr = tempArr;
   return arr;
 }
 
