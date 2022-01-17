@@ -2,7 +2,10 @@ var connectionRequests = 2;
 var yourConnections = 500;
 
 function changeName() {
-  document.querySelector(".personaldetails h2").innerText = "Sanad Abu Shama";
+  var a = prompt("Enter the name");
+  if (a != "") {
+    document.querySelector(".personaldetails h2").innerText = a;
+  }
 }
 
 function removeRequest(element) {

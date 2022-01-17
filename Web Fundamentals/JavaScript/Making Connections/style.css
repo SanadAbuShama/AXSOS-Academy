@@ -35,6 +35,9 @@ nav-title {
   flex: 1;
   justify-content: center;
 }
+.accept-decline img:hover {
+  cursor: pointer;
+}
 .signout {
   background-color: #3db3e9;
   border: none;
