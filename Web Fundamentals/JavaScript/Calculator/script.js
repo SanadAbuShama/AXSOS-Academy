@@ -35,7 +35,7 @@ function clr() {
 
 function calculate() {
   var result = 0;
-  console.log("executed");
+
   if (firstNum != "") {
     result = firstNum;
   }
