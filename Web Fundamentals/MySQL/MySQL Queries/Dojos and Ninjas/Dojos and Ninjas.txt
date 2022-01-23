@@ -1,0 +1,49 @@
+INSERT INTO dojos (name,created_at,updated_at) 
+VALUES
+('Karate', NOW(), NOW()),
+('Ninjutsu', NOW(), NOW()),
+('Taekwondo', NOW(), NOW());
+
+
+DELETE FROM dojos WHERE id=1 OR id=2 OR id=3;
+
+
+INSERT INTO dojos (name,created_at,updated_at) 
+VALUES
+('Wrestling', NOW(), NOW()),
+('Coding', NOW(), NOW()),
+('Karate', NOW(), NOW());
+
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id, created_at,updated_at) 
+VALUES
+('Sanad', 'Abu Shama', 24, (SELECT id FROM dojos WHERE dojos.name='Karate'), NOW(), NOW()),
+('Issa', 'Kamil', 20, (SELECT id FROM dojos WHERE dojos.name='Karate'), NOW(), NOW()),
+('Fateh', 'Ahmad', 29, (SELECT id FROM dojos WHERE dojos.name='Karate'), NOW(), NOW());
+
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id, created_at,updated_at) 
+VALUES
+('Othman', 'Abu Laila', 19, (SELECT id FROM dojos WHERE dojos.name='Coding'), NOW(), NOW()),
+('Yousef', 'Bayatneh', 26, (SELECT id FROM dojos WHERE dojos.name='Coding'), NOW(), NOW()),
+('Naser', 'Abu Falah', 23, (SELECT id FROM dojos WHERE dojos.name='Coding'), NOW(), NOW());
+
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id, created_at,updated_at) 
+VALUES
+('Ahmad', 'Jundi', 19, (SELECT id FROM dojos WHERE dojos.name='Karate'), NOW(), NOW()),
+('Amjad', 'Tahboub', 32, (SELECT id FROM dojos WHERE dojos.name='Karate'), NOW(), NOW()),
+('Shadi', 'Mousleh', 22, (SELECT id FROM dojos WHERE dojos.name='Karate'), NOW(), NOW());
+
+
+SELECT * FROM ninjas WHERE dojo_id=4;
+
+
+SELECT * FROM ninjas WHERE dojo_id=6;
+
+
+SELECT * FROM dojos WHERE id= (SELECT dojo_id FROM ninjas ORDER BY id DESC LIMIT 1);
+
+
+
+
