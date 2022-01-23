@@ -1,0 +1,28 @@
+
+INSERT INTO users (first_name,last_name,email,created_at,updated_at) 
+VALUES
+('Sanad', 'Abu Shama','sanad@hotmail.com',NOW(),NOW()),
+('Ahmad','Hamed','ahmad@gmail.com',NOW(),NOW()),
+('Jamal','Mahmoud','jamal23@gmail.com',NOW(),NOW());
+
+
+SELECT * FROM users;
+
+
+SELECT * FROM users WHERE email='sanad@hotmail.com';
+
+
+SELECT * FROM users WHERE id=3;
+
+
+UPDATE users SET last_name = 'Pancakes' WHERE id=3;
+
+
+DELETE FROM users WHERE id=2;
+
+
+SELECT * FROM users ORDER BY first_name;
+
+
+SELECT * FROM users ORDER BY first_name DESC;
+
