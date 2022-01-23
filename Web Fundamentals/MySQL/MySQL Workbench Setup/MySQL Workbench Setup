@@ -1,0 +1,13 @@
+SELECT *
+FROM users
+WHERE first_name LIKE "%e"
+ORDER BY users.id 
+
+INSERT INTO users (first_name, last_name, handle, birthday, created_at,updated_at) 
+VALUES('Sanad', 'Abu Shama','sanadA','1997-10-06',NOW(),NOW())
+
+
+UPDATE users SET first_name = 'Ahmad' WHERE users.id=6;
+
+
+DELETE FROM users WHERE id=6;
