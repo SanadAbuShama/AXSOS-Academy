@@ -19,15 +19,14 @@ main {
   justify-content: space-between;
 }
 .top header img {
-  height: 10vh;
-  margin-left: 30px;
-  width: 240px;
+  height: 16vh;
+  margin: 30px 0 0 30px;
 }
 .top header .search {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 400px;
+  width: 320px;
 }
 .top .search span {
   align-items: flex-end;
@@ -69,17 +68,11 @@ main {
   box-shadow: 3px 3px 1px black;
   display: flex;
   height: 7vh;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style-type: none;
   margin: 20px 50px 0 80px;
 }
-.top .navbar .nav-item {
-  align-items: center;
-  display: flex;
-  flex: 1;
-  height: 100%;
-  justify-content: center;
-}
+
 .navbar .nav-item a {
   color: #eef3f7;
   font-size: 20px;
