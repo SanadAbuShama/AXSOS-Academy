@@ -155,7 +155,7 @@ main {
   color: #93bbde;
   text-decoration: none;
 }
-.footer {
+footer {
   align-items: center;
   background-color: #2c6596;
   display: flex;
@@ -163,19 +163,19 @@ main {
   height: 10vh;
   justify-content: space-evenly;
 }
-.footer .links {
+footer .links {
   align-items: center;
   display: flex;
   flex: 3;
   justify-content: space-evenly;
   width: 80%;
 }
-.footer h5 {
+footer h5 {
   color: #669ac8;
   text-align: center;
   width: 20%;
 }
-.footer > h6 {
+footer > h6 {
   color: #669ac8;
   flex: 1;
   margin-bottom: 5px;
