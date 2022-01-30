@@ -65,34 +65,3 @@ class User:
         if accountNum == 2 and other_user_acountNum == 2:
             self.accounts['Account2'].withdraw(amount)
             other_user.accounts['Account2'].deposit(amount)
-
-
-""" sanad = User('Sanad Abu Shama', 'sanad@hotmail.com')
-ahmad = User('Ahmad', 'ahmad@gmail.com')
-
-sanad.display_user_balance()
-sanad.make_deposit(500, 1)
-sanad.make_deposit(600, 2)
-sanad.display_user_balance()
-sanad.make_withdrawal(100, 1)
-sanad.make_withdrawal(200, 2)
-sanad.display_user_balance()
-
-
-sanad.display_user_balance()
-sanad.make_deposit(500, 1)
-sanad.make_deposit(600, 2)
-sanad.display_user_balance()
-ahmad.display_user_balance()
-
-sanad.transfer_money(ahmad, 200, 1, 1)
-sanad.display_user_balance()
-ahmad.display_user_balance()
-
-sanad.transfer_money(ahmad, 300, 2, 1)
-sanad.display_user_balance()
-ahmad.display_user_balance()
-
-sanad.transfer_money(ahmad, 100, 2, 2)
-sanad.display_user_balance()
-ahmad.display_user_balance() """
