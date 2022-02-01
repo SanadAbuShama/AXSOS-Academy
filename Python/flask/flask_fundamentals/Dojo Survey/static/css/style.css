@@ -1,0 +1,36 @@
+main {
+  border: 2px solid black;
+  width: fit-content;
+  margin: 0 auto;
+  height: 20rem;
+  width: 30rem;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+form {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+h1 {
+  text-decoration: underline;
+}
+
+section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-right: 150px;
+}
+
+button {
+  background-color: #9fc5f8;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px black;
+  color: white;
+  padding: 3px 10px;
+}
