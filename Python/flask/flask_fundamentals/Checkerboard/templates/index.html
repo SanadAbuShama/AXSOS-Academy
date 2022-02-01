@@ -12,21 +12,41 @@
   </head>
   <body>
     <main>
-        {%if not x and not y:%} 
-            {%for i in range(8):%}
+        {%if x and y and color1 and color2:%} 
+            {%for i in range(x):%}
                 <div class="row">
-                {%for j in range(8):%} 
-                    {%if i%2==0:%} 
-                        {%if j%2==0:%}
-                        <div class="box_black"></div>
+                {%for j in range(y):%} 
+                    {%if i % 2 == 0 :%} 
+                        {%if j % 2 == 0:%}
+                            <div class="box_black"></div>
                         {%else:%}
-                        <div class="box_red"></div>
+                            <div class="box_red"></div>
                         {%endif%} 
                     {%else:%} 
-                        {%if j%2!=0:%}
-                        <div class="box_black"></div>
+                        {%if j % 2 != 0:%}
+                            <div class="box_black"></div>
                         {%else:%}
-                        <div class="box_red"></div>
+                            <div class="box_red"></div>
+                        {%endif%} 
+                    {%endif%} 
+                {%endfor%}
+                </div>
+            {%endfor%}
+        {%elif x and y:%} 
+            {%for i in range(x):%}
+                <div class="row">
+                {%for j in range(y):%} 
+                    {%if i % 2 == 0:%} 
+                        {%if j % 2 == 0:%}
+                            <div class="box_black"></div>
+                        {%else:%}
+                            <div class="box_red"></div>
+                        {%endif%} 
+                    {%else:%} 
+                        {%if j % 2 != 0:%}
+                            <div class="box_black"></div>
+                        {%else:%}
+                            <div class="box_red"></div>
                         {%endif%} 
                     {%endif%} 
                 {%endfor%}
@@ -36,14 +56,14 @@
             {%for i in range(x):%}
                 <div class="row">
                 {%for j in range(8):%} 
-                    {%if i%2==0:%} 
-                        {%if j%2==0:%}
+                    {%if i % 2 == 0:%} 
+                        {%if j % 2 == 0:%}
                             <div class="box_black"></div>
                         {%else:%}
                             <div class="box_red"></div>
                         {%endif%} 
                     {%else:%} 
-                        {%if j%2!=0:%}
+                        {%if j % 2 != 0:%}
                             <div class="box_black"></div>
                         {%else:%}
                             <div class="box_red"></div>
@@ -52,41 +72,21 @@
                 {%endfor%}
                 </div>
             {%endfor%} 
-        {%elif x and y and color1 and color2:%} 
-            {%for i in range(x):%}
+        {%else:%} 
+            {%for i in range(8):%}
                 <div class="row">
-                {%for j in range(y):%} 
+                {%for j in range(8):%} 
                     {%if i%2==0:%} 
-                        {%if j%2==0:%}
-                            <div class="box_black"></div>
+                        {%if j % 2 == 0:%}
+                        <div class="box_black"></div>
                         {%else:%}
-                            <div class="box_red"></div>
+                        <div class="box_red"></div>
                         {%endif%} 
                     {%else:%} 
-                        {%if j%2!=0:%}
-                            <div class="box_black"></div>
+                        {%if j % 2 != 0:%}
+                        <div class="box_black"></div>
                         {%else:%}
-                            <div class="box_red"></div>
-                        {%endif%} 
-                    {%endif%} 
-                {%endfor%}
-                </div>
-            {%endfor%} 
-        {%elif x and y:%} 
-            {%for i in range(x):%}
-                <div class="row">
-                {%for j in range(y):%} 
-                    {%if i%2==0:%} 
-                        {%if j%2==0:%}
-                            <div class="box_black"></div>
-                        {%else:%}
-                            <div class="box_red"></div>
-                        {%endif%} 
-                    {%else:%} 
-                        {%if j%2!=0:%}
-                            <div class="box_black"></div>
-                        {%else:%}
-                            <div class="box_red"></div>
+                        <div class="box_red"></div>
                         {%endif%} 
                     {%endif%} 
                 {%endfor%}
