@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 30px;
+}
+
+.row {
+  display: flex;
+  height: fit-content;
+}
+
+.box_black {
+  width: 80px;
+  height: 80px;
+  background-color: black;
+}
+.box_red {
+  width: 80px;
+  height: 80px;
+  background-color: red;
+}
