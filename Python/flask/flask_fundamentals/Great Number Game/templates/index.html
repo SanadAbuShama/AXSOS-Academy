@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Great Number Game</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <main>
+      <h1>Welcome to number game!</h1>
+      <h2>Guess a number between 1 and 100</h2>
+      {%if not session['guess']:%} 
+        {{pass}} 
+      {%elif session['guess'] == 'high':%}
+        <div class="high"><h2>Too High!</h2></div>
+      {%elif session['guess'] == 'low':%}
+        <div class="low"><h2>Too Low!</h2></div>
+      {%elif session['guess'] == 'correct':%}
+        <div class="correct">
+            <h2>{{session['number']}} was the number!</h2>
+            <h3>It took {{session['tries']}} tries!</h3>
+            <button><a href="/reset">Play Again!</a></button>
+        </div>
+      {%elif session['guess'] == 'wrong':%}
+        <div class="lose">
+            <h2>You lose</h2>
+            <h3>You exceeded 5 tries!</h3>
+            <button><a href="/reset">Play Again!</a></button>
+        </div>
+      {%endif%} 
+      {%if not 'guess' in session or (session['guess'] != 'correct'
+      and session['guess'] != 'wrong'):%}
+        <form action="/guess" method="post">
+            <div>
+            <input type="number" name="guess" id="guess" max="100" min="1" />
+            </div>
+            <button>Submit</button>
+        </form>
+      {%endif%}
+    </main>
+  </body>
+</html>
