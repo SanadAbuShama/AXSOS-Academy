@@ -1,5 +1,4 @@
 
-
 import random
 from flask import Flask, render_template, request, redirect, session, session
 app = Flask(__name__)
@@ -12,6 +11,7 @@ def index():
     if not 'number' in session:
         num = random.randint(1, 100)
         session['number'] = num
+        print(session)
 
     return render_template('index.html')
 
@@ -41,8 +41,28 @@ def guess():
 
 @app.route('/reset')
 def reset():
+    winners = session['winners']
     session.clear()
+    session['winners'] = winners
     return redirect('/')
+
+
+@app.route('/winner', methods=['POST'])
+def winner():
+    print(request.form)
+    session['name'] = request.form['name']
+    if not 'winners' in session:
+        session['winners'] = []
+    else:
+        session['winners'].append(
+            {'name': session['name'], 'tries': session['tries']})
+    print(session['winners'])
+    return redirect('/leaderboard')
+
+
+@app.route('/leaderboard')
+def leader_board():
+    return render_template('leaderboard.html')
 
 
 if __name__ == "__main__":

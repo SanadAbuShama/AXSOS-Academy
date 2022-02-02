@@ -22,24 +22,29 @@
         <div class="low"><h2>Too Low!</h2></div>
       {%elif session['guess'] == 'correct':%}
         <div class="correct">
-            <h2>{{session['number']}} was the number!</h2>
-            <h3>It took {{session['tries']}} tries!</h3>
-            <button><a href="/reset">Play Again!</a></button>
+          <h2>{{session['number']}} was the number!</h2>
+          <h3>It took {{session['tries']}} tries!</h3>
+          <button><a href="/reset">Play Again!</a></button>
         </div>
+        <form action="/winner" method="post">
+          <label for="name">Please enter your name: </label>
+          <input type="text" name="name" id="name" />
+          <button>Submit</button>
+        </form>
       {%elif session['guess'] == 'wrong':%}
         <div class="lose">
-            <h2>You lose</h2>
-            <h3>You exceeded 5 tries!</h3>
-            <button><a href="/reset">Play Again!</a></button>
+          <h2>You lose</h2>
+          <h3>You exceeded 5 tries!</h3>
+          <button><a href="/reset">Play Again!</a></button>
         </div>
       {%endif%} 
       {%if not 'guess' in session or (session['guess'] != 'correct'
       and session['guess'] != 'wrong'):%}
         <form action="/guess" method="post">
-            <div>
+          <div>
             <input type="number" name="guess" id="guess" max="100" min="1" />
-            </div>
-            <button>Submit</button>
+          </div>
+          <button>Submit</button>
         </form>
       {%endif%}
     </main>
