@@ -1,0 +1,19 @@
+main {
+  width: fit-content;
+  margin: 50px auto;
+  text-align: center;
+}
+
+main * {
+  margin: 20px;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}

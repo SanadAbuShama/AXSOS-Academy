@@ -1,0 +1,58 @@
+main {
+  display: flex;
+  margin: 20px auto;
+  width: fit-content;
+}
+.location {
+  padding: 20px 0;
+  flex: 1;
+  border: 2px solid black;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gold {
+  margin: 30px 90px 0 90px;
+}
+
+.location a {
+  background-color: white;
+  color: black;
+  padding: 5px 20px;
+  margin-top: 10px;
+  box-shadow: 2px 2px 2px black;
+  border: 2px solid black;
+  width: max-content;
+  text-decoration: none;
+}
+
+.textarea {
+  margin: 30px 90px 0 90px;
+}
+
+.messages {
+  width: 1150px;
+  height: 150px;
+  border: 2px solid black;
+  padding: 5px 10px;
+  overflow-y: scroll;
+  margin-top: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 5px 15px;
+  margin: 30px 90px 0 90px;
+  display: inline-block;
+}
+
+ul {
+  transform: rotate(180deg);
+}
+ul > li {
+  transform: rotate(-180deg);
+}

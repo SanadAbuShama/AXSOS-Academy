@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style_welcome.css' %}" />
+  </head>
+  <body>
+    <main>
+      <h1>Welcome to Ninja Gold!</h1>
+      <h2>Please enter the win parameters:</h2>
+      <form action="/player/start" method="post">
+        {%csrf_token%}
+        <div>
+          <label for="target_gold">Minimum gold: </label>
+          <input type="number" name="target_gold" id="target_gold" />
+        </div>
+        <div>
+          <label for="target_moves">Maximum moves: </label>
+          <input type="number" name="target_moves" id="target_moves" />
+        </div>
+        <button>Play!</button>
+      </form>
+    </main>
+  </body>
+</html>
