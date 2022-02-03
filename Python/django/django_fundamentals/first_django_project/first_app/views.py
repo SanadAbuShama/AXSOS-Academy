@@ -1,9 +1,12 @@
-from django.shortcuts import render, redirect, HttpResponse
+import imp
+from django.shortcuts import render
+
+from django.shortcuts import render, HttpResponse, redirect
 from django.http import JsonResponse
 
 
 def root(request):
-    return redirect('/blogs')
+    return redirect("/blogs")
 
 
 def index(request):
@@ -27,11 +30,11 @@ def edit(request, number):
 
 
 def destroy(request, number):
-    return redirect('/blogs')
+    return redirect('/')
 
 
 def json_show(request):
     return JsonResponse({
-        'title': 'My first blog',
-        'content': 'My first blog content'
+        'title': 'My blog title',
+        'content': 'Blog content'
     })
