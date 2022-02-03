@@ -1,0 +1,20 @@
+main {
+  width: fit-content;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+  width: fit-content;
+}
+
+.datetime {
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px 100px;
+}
