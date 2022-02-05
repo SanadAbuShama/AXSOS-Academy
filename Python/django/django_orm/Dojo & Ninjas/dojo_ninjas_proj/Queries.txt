@@ -1,0 +1,54 @@
+
+// Create 3 new dojos:
+Dojo.objects.create(name="Karate Dojo", city="Ramallah", state="Palestine")
+Dojo.objects.create(name="Coding  Dojo", city="Los Angeles", state="California")
+Dojo.objects.create(name="Wrestling  Dojo", city="Amman", state="Jordan")
+
+
+// Delete the 3 dojos you just created:
+dojo = Dojo.objects.get(id=1)
+dojo.delete()
+dojo = Dojo.objects.get(id=2)
+dojo.delete()
+dojo = Dojo.objects.get(id=3)
+dojo.delete()
+
+
+// Create 3 more dojos:
+Dojo.objects.create(name="Taekwando Dojo", city="Ramallah", state="Palestine")
+Dojo.objects.create(name="Coding Dojo", city="Los Angeles", state="California")
+Dojo.objects.create(name="Judo Dojo", city="Amman", state="Jordan")
+
+
+// Create 3 ninjas that belong to the first dojo:
+Ninja.objects.create(first_name="Sanad", last_name="Abu Shama", dojo=Dojo.objects.first())
+Ninja.objects.create(first_name="Ahmad", last_name="Yaman", dojo=Dojo.objects.first())
+Ninja.objects.create(first_name="Yazan", last_name="Ghawali", dojo=Dojo.objects.first())
+
+
+// Create 3 ninjas that belong to the second dojo:
+Ninja.objects.create(first_name="Mahmoud", last_name="Mubaied", dojo=Dojo.objects.get(id=5))
+Ninja.objects.create(first_name="Omar", last_name="Hamed", dojo=Dojo.objects.get(id=5))
+Ninja.objects.create(first_name="Faisal", last_name="Abdelkareem", dojo=Dojo.objects.get(id=5))
+
+
+// Create 3 ninjas that belong to the third dojo:
+Ninja.objects.create(first_name="Amjad", last_name="Mazaraa", dojo=Dojo.objects.get(id=6))
+Ninja.objects.create(first_name="Yousef", last_name="Bayatneh", dojo=Dojo.objects.get(id=6))
+Ninja.objects.create(first_name="Awad", last_name="Dalu", dojo=Dojo.objects.get(id=6))
+
+
+// Retrieve all the ninjas from the first dojo:
+Dojo.objects.first().ninjas.all()
+
+
+// Retrieve all the ninjas from the last dojo:
+Dojo.objects.last().ninjas.all()
+
+
+// Retrieve the last ninja's dojo:
+Ninja.objects.last().dojo
+
+
+// Create a new dojo:
+Dojo.objects.create(name="Sumo Dojo", city="Tokyo", state="Japan")
