@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 
 
 from .models import User
-from wall_app.models import Message, Comment
+
 from django.contrib import messages
 import bcrypt
 
@@ -26,12 +26,12 @@ def register(request):
         pw_hash = bcrypt.hashpw(
             password.encode(), bcrypt.gensalt()).decode()
         User.objects.create(
-            first_name=request.POST['first_name'], last_name=request.POST['last_name'], email=request.POST['email'], password=pw_hash, birthday=request.POST['birthday'])
+            first_name=request.POST['first_name'], last_name=request.POST['last_name'], email=request.POST['email'], password=pw_hash)
         user = User.objects.filter(email=request.POST['email'])
         if user:
             logged_user = user[0]
             request.session['userid'] = logged_user.id
-        return redirect('/dojo_wall/wall')
+        return redirect('/books')
 
 
 def login(request):
@@ -47,7 +47,7 @@ def login(request):
         logged_user = user[0]
         if bcrypt.checkpw(request.POST['password'].encode(), logged_user.password.encode()):
             request.session['userid'] = logged_user.id
-            return redirect('/dojo_wall/wall')
+            return redirect('/books')
 
     return redirect('/')
 
