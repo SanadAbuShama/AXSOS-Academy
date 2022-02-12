@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/books_style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h2>Welcome, {{name}}!</h2>
+      <div>
+        <a href="/books/add">Add Book and Review</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </header>
+    <main>
+      <article>
+        <h4>Recent Book Reviews:</h4>
+        {%for review in reviews%}
+        <a href="/books/{{review.book_reviewed.id}}"
+          >{{review.book_reviewed.title}}</a
+        >
+        <div class="book">
+          <p>Rating: {{review.rating}}</p>
+          <p>
+            <a href="/users/{{review.posted_by.id}}"
+              >{{review.posted_by.name}}</a
+            >
+            says: {{review.review}}
+          </p>
+          <p>Posted on: {{review.created_at}}</p>
+        </div>
+        {%endfor%}
+      </article>
+      <aside>
+        <h4>Other Books with Reviews:</h4>
+        <div>
+          <ul>
+            {%for book in other_books%} {%if book.reviews.all|length > 0%}
+            <li>
+              <a href="/books/{{book.id}}">{{book.title}}</a>
+            </li>
+            {%endif%} {%endfor%}
+          </ul>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>

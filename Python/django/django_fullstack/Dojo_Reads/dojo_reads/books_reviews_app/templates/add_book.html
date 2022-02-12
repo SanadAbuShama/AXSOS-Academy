@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a Book and Review</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/add_book_style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <a href="/books">Home</a>
+      <a href="/logout">Logout</a>
+    </header>
+    <main>
+      <h4>Add a new Book title and Review:</h4>
+      {% for message in messages %}
+      <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+        {{ message }}
+      </li>
+      {% endfor %}
+      <form action="/books/create" method="post">
+        {%csrf_token%}
+        <div>
+          <label for="title">Book Title:</label>
+          <input type="text" name="title" id="title" />
+        </div>
+        <div>
+          <p>Author:</p>
+          <div>
+            <label for="author">Select from the list:</label>
+            <select name="author" id="author">
+              <option value="Stephen King">Stephen King</option>
+              <option value="J.K Rowling">J.K Rowling</option>
+              <option value="George RR Martin">George RR Martin</option>
+            </select>
+          </div>
+          <div>
+            <label for="new_author">Or add a new author:</label>
+            <input type="text" name="new_author" id="new_author" />
+          </div>
+        </div>
+        <div class="review">
+          <label for="review">Review:</label>
+          <textarea name="review" id="review" cols="20" rows="10"></textarea>
+        </div>
+        <div>
+          <label for="rating">Rating:</label>
+          <select name="rating" id="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="button">
+          <button type="submit">Add Book and Review</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

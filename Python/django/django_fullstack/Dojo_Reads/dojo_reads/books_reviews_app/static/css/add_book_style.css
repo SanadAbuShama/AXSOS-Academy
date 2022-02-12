@@ -1,0 +1,41 @@
+main {
+  width: 60%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header * {
+  margin: 10px;
+}
+
+form {
+  margin-left: 20px;
+}
+
+form * {
+  margin: 10px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button button {
+  background-color: white;
+  border: 2px solid black;
+  padding: 5px 10px;
+  box-shadow: 2px 2px 2px black;
+}
+button:hover {
+  cursor: pointer;
+}

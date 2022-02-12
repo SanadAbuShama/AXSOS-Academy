@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login/Register</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/home_style.css' %}" />
+  </head>
+  <body>
+    <main>
+      <div class="register">
+        <h2 class="mb-3">Registration</h2>
+        {%if request.session.which_form == 'register'%} {% if messages %}
+        <ul class="messages text-start">
+          {% for message in messages %}
+          <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+            {{ message }}
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %} {%endif%}
+        <form action="/register" method="post">
+          {%csrf_token%}
+          <input type="hidden" name="which_form" value="register" />
+          <div class="mb-3">
+            Name:
+            <input type="text" class="form-control" id="name" name="name" />
+          </div>
+          <div class="mb-3">
+            Alias:
+            <input type="text" class="form-control" id="alias" name="alias" />
+          </div>
+          <div class="mb-3">
+            Email:
+            <input type="email" class="form-control" id="email" name="email" />
+          </div>
+          <div class="mb-3">
+            Password:
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+            />
+          </div>
+          <div class="mb-3">
+            Confirm PW:
+            <input
+              type="password"
+              class="form-control"
+              id="confirm_password"
+              name="confirm_password"
+            />
+          </div>
+          <div class="button">
+            <button type="submit" class="btn btn-success">Register</button>
+          </div>
+        </form>
+      </div>
+      <div class="login">
+        <h2 class="mb-3">Login</h2>
+        {%if request.session.which_form == 'login'%} {% if messages %}
+        <ul class="messages text-start">
+          {% for message in messages %}
+          <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+            {{ message }}
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %} {% endif %}
+        <form action="/login" method="post">
+          {%csrf_token%}
+          <input type="hidden" name="which_form" value="login" />
+          <div class="mb-3">
+            Email:
+            <input
+              type="email"
+              class="form-control"
+              id="email_login"
+              name="email"
+            />
+          </div>
+          <div class="mb-3">
+            Password:
+            <input
+              type="password"
+              class="form-control"
+              id="password_login"
+              name="password"
+            />
+          </div>
+          <div class="button">
+            <button type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

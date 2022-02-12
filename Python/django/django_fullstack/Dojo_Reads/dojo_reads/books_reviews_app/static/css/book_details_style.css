@@ -1,0 +1,50 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 40px auto;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header * {
+  margin: 10px;
+}
+article {
+  width: 60%;
+}
+
+.add_review {
+  display: flex;
+  flex-direction: column;
+}
+.add_review * {
+  margin: 10px 0;
+}
+.review {
+  border-top: 2px solid black;
+}
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button button {
+  background-color: white;
+  border: 2px solid black;
+  padding: 5px 10px;
+  box-shadow: 2px 2px 2px black;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.delete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

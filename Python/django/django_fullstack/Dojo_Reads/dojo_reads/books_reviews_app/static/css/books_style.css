@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 40px 0;
+  padding: 5px 20px;
+}
+
+header div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 17%;
+}
+
+main {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+main article {
+  width: 50%;
+}
+.book {
+  margin-bottom: 20px;
+}
+main aside ul {
+  list-style-type: none;
+}
+main aside div {
+  border: 2px solid black;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+main article h4 {
+  margin-bottom: 20px;
+}
+
+main article div {
+  padding-left: 20px;
+}
+main article div * {
+  margin: 10px 0;
+}
+main article > a {
+  padding-left: 10px;
+}
+
+main article span {
+  color: #e9c31b;
+  font-size: 20pt;
+}
