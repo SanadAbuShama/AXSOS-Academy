@@ -9,6 +9,10 @@ from django.contrib import messages
 import bcrypt
 
 
+def home(request):
+    return render(request, 'home.html')
+
+
 def index(request):
     if 'userid' in request.session:
         return redirect('/books')
@@ -16,21 +20,40 @@ def index(request):
         return render(request, 'index.html')
 
 
+def register_form(request):
+    if not 'userid' in request.session:
+        return render(request, 'register.html')
+    else:
+        return redirect(f'/users')
+
+
+def login_form(request):
+    if not 'userid' in request.session:
+        return render(request, 'login.html')
+    else:
+        return redirect(f'/users')
+
+
 def register(request):
     errors = User.objects.register_validator(request.POST)
-    request.session['which_form'] = request.POST['which_form']
+
     if len(errors) > 0:
         for key, value in errors.items():
             messages.error(request, value)
 
-        return redirect('/')
+        return redirect('/register_form')
     else:
-
+        users = User.objects.all()
+        if len(users) == 0:
+            isAdmin = True
+        else:
+            isAdmin = False
         password = request.POST['password']
         pw_hash = bcrypt.hashpw(
             password.encode(), bcrypt.gensalt()).decode()
+
         User.objects.create(
-            name=request.POST['name'], alias=request.POST['alias'], email=request.POST['email'], password=pw_hash)
+            first_name=request.POST['first_name'], last_name=request.POST['last_name'], email=request.POST['email'], password=pw_hash, admin=isAdmin)
         user = User.objects.filter(email=request.POST['email'])
         if user:
             logged_user = user[0]
@@ -40,33 +63,24 @@ def register(request):
 
 def login(request):
     errors = User.objects.login_validator(request.POST)
-    request.session['which_form'] = request.POST['which_form']
     if len(errors) > 0:
         for key, value in errors.items():
             messages.error(request, value)
 
-        return redirect('/')
+        return redirect('/login_form')
     user = User.objects.filter(email=request.POST['email'])
     if len(user) != 0:
         logged_user = user[0]
         if bcrypt.checkpw(request.POST['password'].encode(), logged_user.password.encode()):
             request.session['userid'] = logged_user.id
-            return redirect('/books')
+            if logged_user.admin:
+                return redirect('/users/admin')
+            elif not logged_user.admin:
+                return redirect('/users')
 
     return redirect('/')
 
 
 def logout(request):
     request.session.clear()
-    return redirect('/')
-
-
-def user_profile(request, user_id):
-    user = User.objects.get(id=user_id)
-    if user:
-        num_reviews = len(user.reviews.all())
-        context = {
-            'user': user,
-            'num_reviews': num_reviews
-        }
-    return render(request, 'user_profile.html', context)
+    return redirect('/login_form')
