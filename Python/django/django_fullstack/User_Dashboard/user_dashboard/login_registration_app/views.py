@@ -58,7 +58,7 @@ def register(request):
         if user:
             logged_user = user[0]
             request.session['userid'] = logged_user.id
-        return redirect('/books')
+        return redirect('/users')
 
 
 def login(request):
