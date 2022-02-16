@@ -13,13 +13,6 @@ def home(request):
     return render(request, 'home.html')
 
 
-def index(request):
-    if 'userid' in request.session:
-        return redirect('/books')
-    else:
-        return render(request, 'index.html')
-
-
 def register_form(request):
     if not 'userid' in request.session:
         return render(request, 'register.html')
