@@ -1,6 +1,7 @@
 {
-    "java.project.sourcePaths": [
-        "Java/Fundamentals/Puzzling",
-        "Java/Fundamentals/Map_of_the_Hashmatique"
-    ]
+  "java.project.sourcePaths": [
+    "Java/Fundamentals/Puzzling",
+    "Java/Fundamentals/Map_of_the_Hashmatique",
+    "Java/Fundamentals/List_of_exceptions"
+  ]
 }
