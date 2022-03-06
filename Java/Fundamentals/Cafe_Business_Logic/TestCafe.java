@@ -15,7 +15,7 @@ public class TestCafe {
         System.out.printf("Purchases needed for week 6: %s \n\n", appTest.getStreakGoal(6));
 
         System.out.println("----- Order Total Test -----");
-        double[] lineItems = { 3.5, 1.5, 4.0, 4.5 };
+        double[] lineItems = { 3.0, 1.5, 4.0, 4.5 };
         System.out.printf("Order Total: %s \n\n", appTest.getOrderTotal(lineItems));
 
         System.out.println("----- Try Show Menu-----");
@@ -27,6 +27,18 @@ public class TestCafe {
         menu.add("mocha");
         appTest.displayMenu(menu);
 
+        // Test of Price Chart
+        System.out.println("\nPrice Chart:\n");
+        appTest.printPriceChart(menu.get(0), lineItems[0], 5);
+
+        // Test display menu overloading
+        ArrayList<Double> prices = new ArrayList<Double>();
+        prices.add(3.5);
+        prices.add(5.0);
+        prices.add(4.5);
+        prices.add(2.0);
+        appTest.displayMenu(menu, prices);
+
         System.out.println("\n----- Try add client-----");
         ArrayList<String> customers = new ArrayList<String>();
         // --- Test 4 times ---
@@ -34,5 +46,6 @@ public class TestCafe {
             appTest.addCustomer(customers);
             System.out.println("\n");
         }
+
     }
 }
