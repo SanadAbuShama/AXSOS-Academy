@@ -1,9 +1,10 @@
 {
   "java.project.sourcePaths": [
+    "Java/OOP/Orders_and_Items",
     "Java/Fundamentals/Puzzling",
     "Java/Fundamentals/Map_of_the_Hashmatique",
     "Java/Fundamentals/List_of_exceptions",
     "Java/Fundamentals/Cafe_Business_Logic",
-    "Java/OOP/Orders_and_Items"
+    "Java/OOP/Barista's_challenge"
   ]
 }
