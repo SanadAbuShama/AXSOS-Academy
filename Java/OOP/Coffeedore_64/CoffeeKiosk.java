@@ -69,6 +69,7 @@ public class CoffeeKiosk {
         // After you have collected their order, print the order details
         // as the example below. You may
         order.display();
+        System.out.println(String.format("Total: $%.2f", order.getOrderTotal()));
     }
 
     public void addItemManually() {
