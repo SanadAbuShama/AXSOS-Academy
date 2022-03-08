@@ -1,8 +1,10 @@
 package Bat;
 
-public class Bat {
+public class Bat extends Mammal {
 
-	protected int energyLevel = 300;
+	public Bat() {
+		this.energyLevel = 300;
+	}
 
 	public void fly() {
 		System.out.println("WOOSH WOOSH");
