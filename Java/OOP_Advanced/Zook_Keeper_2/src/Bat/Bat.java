@@ -12,7 +12,7 @@ public class Bat extends Mammal {
 	}
 
 	public void eatHumans() {
-
+		System.out.println("Delicious human!");
 		energyLevel += 25;
 	}
 
