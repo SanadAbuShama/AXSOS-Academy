@@ -12,6 +12,11 @@
 <body>
 
 	<div class="container">
+		<div class="row mt-5">
+			<div class="col-4 offset-4">
+				<h1>Send an Omikuji</h1>
+			</div>
+		</div>
 		<div class="row my-5">
 			<div class="col-4 offset-4 border border-2 border-dark p-3">
 				<form action="/submit" method="post">
