@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+
+.messages {
+	height: 100px;
+	overflow-y: scroll;
+}
+
+.messages * {
+	margin: 0;
+}
