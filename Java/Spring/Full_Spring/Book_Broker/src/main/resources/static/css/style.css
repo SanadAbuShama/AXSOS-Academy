@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+
+.user {
+	color: #cf2a27;
+}
+
+.title, .welcome {
+	color: #9c07ff;
+}
+
+.author {
+	color: #009e0f;
+}
