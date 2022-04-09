@@ -1,6 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-class PersonCard extends Component {
+// Class components
+/* class PersonCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,6 +29,18 @@ class PersonCard extends Component {
       </>
     );
   }
-}
+} */
+
+const PersonCard = (props) => {
+  return (
+    <div>
+      <h1>
+        {props.lastName}, {props.firstName}
+      </h1>
+      <p>Age: {props.age}</p>
+      <p>Hair Color: {props.hairColor}</p>
+    </div>
+  );
+};
 
 export default PersonCard;
