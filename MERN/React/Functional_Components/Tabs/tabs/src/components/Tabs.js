@@ -19,7 +19,10 @@ const Tabs = (props) => {
                   <button
                     onClick={(e) => onClickHandler(e, item)}
                     className={
-                      isActive === item.name ? "nav-link active" : "nav-link"
+                      "me-3 " +
+                      (isActive === item.name
+                        ? "active btn btn-dark "
+                        : "btn btn-outline-dark")
                     }
                     type="button"
                   >
