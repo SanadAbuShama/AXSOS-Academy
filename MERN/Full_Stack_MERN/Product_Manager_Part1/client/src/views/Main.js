@@ -7,13 +7,8 @@ import ProductDetails from "../components/ProductDetails";
 import UpdateProduct from "../components/UpdateProduct";
 const Main = () => {
   const [products, setProducts] = useState([]);
-
   const removeFromDom = (id) => {
     setProducts(products.filter((product) => product._id !== id));
-  };
-
-  const addToDom = (product) => {
-    setProducts([...products, product]);
   };
 
   useEffect(() => {
@@ -23,6 +18,16 @@ const Main = () => {
       .catch((err) => console.error(err));
   }, []);
 
+  const createProduct = (product) => {
+    axios
+      .post("http://localhost:8000/api/products", product)
+      .then((res) => {
+        console.log("Response, ", res);
+        setProducts([...products, product]);
+      })
+      .catch((err) => console.log("Error, ", err));
+  };
+
   return (
     <BrowserRouter>
       <Routes>
@@ -30,7 +35,12 @@ const Main = () => {
           path="/"
           element={
             <>
-              <ProductForm addToDom={addToDom} />
+              <ProductForm
+                initilTitle=""
+                initialPrice=""
+                initialDesc=""
+                onSubmitProp={createProduct}
+              />
               <ProductsList products={products} removeFromDom={removeFromDom} />
             </>
           }

@@ -1,22 +1,20 @@
 import React, { useState } from "react";
-import axios from "axios";
+
 const ProductForm = (props) => {
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [desc, setDesc] = useState("");
+  const { onSubmitProp, initialTitle, initialPrice, initialDesc, updateForm } =
+    props;
+  const [title, setTitle] = useState(initialTitle);
+  const [price, setPrice] = useState(initialPrice);
+  const [desc, setDesc] = useState(initialDesc);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:8000/api/products", { title, price, desc })
-      .then((res) => {
-        console.log("Response, ", res);
-        props.addToDom(res.data);
-        setTitle("");
-        setPrice("");
-        setDesc("");
-      })
-      .catch((err) => console.log("Error, ", err));
+    onSubmitProp({ title, price, desc });
+    if (!updateForm) {
+      setTitle("");
+      setPrice("");
+      setDesc("");
+    }
   };
 
   return (
@@ -50,7 +48,9 @@ const ProductForm = (props) => {
               onChange={(e) => setDesc(e.target.value)}
             />
           </p>
-          <button className="btn btn-success float-end">Add Product</button>
+          <button className="btn btn-success float-end">
+            {updateForm ? "Update Product" : "Add Product"}
+          </button>
         </form>
       </div>
     </div>
