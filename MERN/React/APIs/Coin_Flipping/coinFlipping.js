@@ -9,7 +9,7 @@ function fiveHeads() {
     while (headsCount < 5) {
       attempts++;
       if (attempts > 100) {
-        reject("You exceeded 100 attepmpts");
+        reject("You exceeded 100 attempts");
       }
       let result = tossCoin();
       console.log(`${result} was flipped`);
