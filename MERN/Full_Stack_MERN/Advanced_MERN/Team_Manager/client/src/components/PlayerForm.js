@@ -8,6 +8,7 @@ const Form = (props) => {
   const [name, setName] = useState("");
   const [position, setPosition] = useState("");
   const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
@@ -24,12 +25,33 @@ const Form = (props) => {
       });
   };
 
+  const changeHandler = (e) => {
+    const newName = e.target.value;
+    setName(newName);
+    if (newName.length < 2 && newName.length > 0) {
+      setMessage("Name must be at least 2 characters!");
+    } else if (newName.length === 0) {
+      setMessage("");
+    } else {
+      setMessage("Looks Good!");
+    }
+  };
+
   return (
     <>
       <Box style={{ textAlign: "left" }} mb={3}>
         <Link to="/players/list">List</Link> |{" "}
         <span style={{ fontWeight: "bold" }}>Add Player</span>
       </Box>
+
+      {!error && message && (
+        <Alert
+          variant="outlined"
+          severity={message === "Looks Good!" ? "success" : "error"}
+        >
+          {message}
+        </Alert>
+      )}
       {error && (
         <Alert variant="outlined" severity="error">
           {error}
@@ -44,7 +66,7 @@ const Form = (props) => {
               label="Name"
               variant="outlined"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={changeHandler}
             />
           </Grid>
         </Grid>
