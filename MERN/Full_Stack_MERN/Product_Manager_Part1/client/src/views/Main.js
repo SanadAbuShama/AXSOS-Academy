@@ -23,7 +23,7 @@ const Main = () => {
       .post("http://localhost:8000/api/products", product)
       .then((res) => {
         console.log("Response, ", res);
-        setProducts([...products, product]);
+        setProducts([...products, res.data]);
       })
       .catch((err) => console.log("Error, ", err));
   };
