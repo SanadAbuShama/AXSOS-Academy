@@ -1,0 +1,13 @@
+<div>
+  <h2>Currency Formats</h2>
+  <h3>USD (no format) - {{ value }}</h3>
+  <h3>EUR (currency format) {{ value | currency: "EUR":"code" }}</h3>
+  <h3>
+    AUS (currency 1.2 format = 2 dec values
+    {{ value | currency: "AUS":"code":"4.2-2" }}
+  </h3>
+  <h3>
+    CNY(1.0=0 dec values if value over "0" present) -
+    {{ value | currency: "CNY":"code":"4.1-1" }}
+  </h3>
+</div>
